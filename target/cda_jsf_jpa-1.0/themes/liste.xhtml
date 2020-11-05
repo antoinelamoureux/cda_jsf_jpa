@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="../template.xhtml">
+            <ui:define name="main">
+                <h2>Liste des Themes</h2>
+                <h:form>
+                <h:commandLink action="#{themesController.prepareCreate()}">
+                    <p>Nouveau thème</p>
+                </h:commandLink>
+                <h:dataTable var="themes" value="#{themesController.items}">
+                    <h:column>
+                        <f:facet name="header">
+                            ID
+                        </f:facet>
+                        #{themes.idTheme}
+                    </h:column>   
+                    <h:column>
+                        <f:facet name="header">
+                            Libellé
+                        </f:facet>
+                        #{themes.libelle}
+                    </h:column> 
+                    <h:column>
+                        <f:facet name="header">
+                            News
+                        </f:facet>
+                        #{themes.newsCollection}
+                    </h:column> 
+                    <h:column>
+                        <f:facet name="header">
+                            Action
+                        </f:facet>
+                        <h:commandLink action="#{themesController.prepareUpdate()}">
+                            Modifier
+                        </h:commandLink>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                        </f:facet>
+                    <h:commandLink action="#{themesController.destroy()}">
+                        Supprimer
+                    </h:commandLink>
+                    </h:column>
+                    </h:dataTable>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

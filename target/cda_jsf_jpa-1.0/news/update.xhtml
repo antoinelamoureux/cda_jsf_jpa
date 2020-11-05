@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Update News</title>
+    </h:head>
+    <h:body>
+        <ui:composition>
+            <ui:define name="main">
+                <h2>Modifier News : #{newsController.current.titre}</h2>
+                <h:form>
+                    <h:panelGrid columns="2">
+                        <h:outputLabel value="Titre: "/>
+                        <h:inputText value="#{newsController.current.titre}"/>
+                        <h:outputLabel value="Contenu: "/>
+                        <h:inputText value="#{newsController.current.content}"/>
+                        <h:outputLabel value="Theme: "/>
+                        <h:selectOneMenu id="select" value="#{themesController.items}" style="width:200px">
+                            <f:selectItems value="#{themesController.items}" />
+                        </h:selectOneMenu>
+                    </h:panelGrid><br/>
+                    <h:commandLink action="#{newsController.update()}">
+                        Modifier la news
+                    </h:commandLink>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

@@ -1,0 +1,14 @@
+com/antoinelamoureux/cda_jsf_jpa/ejbs/TagsFacade.class
+com/antoinelamoureux/cda_jsf_jpa/controllers/ThemeConverter.class
+com/antoinelamoureux/cda_jsf_jpa/ejbs/AbstractFacade.class
+com/antoinelamoureux/cda_jsf_jpa/controllers/NewsController.class
+com/antoinelamoureux/cda_jsf_jpa/controllers/ThemesController.class
+com/antoinelamoureux/cda_jsf_jpa/entities/News.class
+com/antoinelamoureux/cda_jsf_jpa/Testem.class
+com/antoinelamoureux/cda_jsf_jpa/resources/JavaEE8Resource.class
+com/antoinelamoureux/cda_jsf_jpa/ejbs/NewsFacade.class
+com/antoinelamoureux/cda_jsf_jpa/entities/Themes.class
+com/antoinelamoureux/cda_jsf_jpa/JAXRSConfiguration.class
+com/antoinelamoureux/cda_jsf_jpa/controllers/TagsController.class
+com/antoinelamoureux/cda_jsf_jpa/entities/Tags.class
+com/antoinelamoureux/cda_jsf_jpa/ejbs/ThemesFacade.class

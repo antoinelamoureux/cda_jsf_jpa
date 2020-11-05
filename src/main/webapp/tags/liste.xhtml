@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="../template.xhtml">
+            <ui:define name="main">
+                <h2>Liste des tags</h2>
+                <h:form>
+                    <h:commandLink action="#{tagsController.prepareCreate()}">
+                        <p>Nouveau tag</p>
+                    </h:commandLink>
+                    <h:dataTable var="tags" value="#{tagsController.items}">
+                        <h:column>
+                            <f:facet name="header">
+                                ID
+                            </f:facet>
+                            #{tags.idTag}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                Libellé
+                            </f:facet>
+                            #{tags.libelle}
+                        </h:column>
+                         <h:column>
+                            <f:facet name="header">
+                                Action
+                            </f:facet>
+                            <h:commandLink action="#{tagsController.prepareUpdate()}">
+                                Modifier
+                            </h:commandLink>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                            </f:facet>
+                            <h:commandLink action="#{tagsController.destroy()}">
+                                Supprimer
+                            </h:commandLink>
+                        </h:column>
+                    </h:dataTable>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

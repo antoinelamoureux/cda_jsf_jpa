@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Create News</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="../template.xhtml">
+            <ui:define name="main">
+                <h2>Nouvelle News</h2>
+                <h:form>
+                    <h:panelGrid columns="2">
+                        <h:outputLabel value="Titre: "/>
+                        <h:inputText value="#{newsController.current.titre}"/>
+                        <h:outputLabel value="Contenu: "/>
+                        <h:inputTextarea rows="4" cols="30" id="content" value="#{newsController.current.content}"/>
+                        <h:outputLabel value="Theme: "/>
+                        <h:selectOneMenu id="select" value="#{newsController.current.theme}" style="width:200px">
+                            <f:selectItems value="#{themesController.selectItems}" />
+                            <!--
+                            <f:selectItem itemLabel="Selectionner un theme" noSelectionOption="true" />
+                            <f:selectItems value="#{themesController.items}" var="theme" itemValue="#{theme}" itemLabel="#{theme.libelle}" />
+                            -->
+                        </h:selectOneMenu>
+                    </h:panelGrid><br/>
+                    <h:commandLink action="#{newsController.create()}">
+                        Créer la news
+                    </h:commandLink>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+
